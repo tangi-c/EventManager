@@ -1,30 +1,30 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagerBusinessLayer", "EventManagerBusinessLayer\EventManagerBusinessLayer.csproj", "{A063A441-4A3F-4DFC-A95E-AB1C676F68BE}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EventManagerWeb(2)", "C:\Users\tangi\Documents\Visual Studio 2015\WebSites\EventManagerWeb\", "{D4000B09-A692-4615-AC00-1858984AF13D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EventManagerWeb(2)", "EventManagerWeb", "{D4000B09-A692-4615-AC00-1858984AF13D}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
 		ProjectReferences = "{a063a441-4a3f-4dfc-a95e-ab1c676f68be}|EventManagerBusinessLayer.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50173"
-		Debug.AspNetCompiler.PhysicalPath = "C:\Users\tangi\Documents\Visual Studio 2015\WebSites\EventManagerWeb\"
+		Debug.AspNetCompiler.PhysicalPath = "EventManagerWeb\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50173\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_50173"
-		Release.AspNetCompiler.PhysicalPath = "C:\Users\tangi\Documents\Visual Studio 2015\WebSites\EventManagerWeb\"
+		Release.AspNetCompiler.PhysicalPath = "EventManagerWeb\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50173\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50173"
-		SlnRelativePath = "C:\Users\tangi\Documents\Visual Studio 2015\WebSites\EventManagerWeb\"
+		SlnRelativePath = "EventManagerWeb\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 	ProjectSection(ProjectDependencies) = postProject
