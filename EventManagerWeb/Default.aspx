@@ -16,7 +16,7 @@
                 <div class="col-md-4">
                     <h2>Getting started</h2>
                     <p>
-                    All you need to do to get started is create your user account.
+                    All you need to do to get started is create a user account.
                     </p>
                     <p><a class="btn btn-default" href="Account/Register.aspx">Create an account &raquo;</a></p>
                 </div>
