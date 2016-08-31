@@ -13,7 +13,8 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.15.35/css/bootstrap-datetimepicker.css"></head>
+    <link rel="stylesheet/less" type="text/css" href="~/Content/bootstrap-datetimepicker-build.less">
+</head>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -34,8 +35,8 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
-                <asp:ScriptReference Path="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js" />
-                <asp:ScriptReference Path="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.15.35/js/bootstrap-datetimepicker.min.js" />
+                <asp:ScriptReference Path="~/Scripts/moment.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-datetimepicker.min.js" />
                 <asp:ScriptReference Path="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" />
            </Scripts>
         </asp:ScriptManager>
