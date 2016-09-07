@@ -82,13 +82,6 @@
                                     </td>
                                 </tr>
                             </table>
-                            <script type="text/javascript">
-                                $(function () {
-                                    $('#dtpEventDate').datetimepicker({ format: 'DD/MM/YYYY'});
-                                    $('#dtpDoorTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
-                                    $('#dtpCurfewTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
-                                });
-                            </script>
                         </div>
                 <%-- LINE UP details --%>
                         <div class="col-md-4">
@@ -165,6 +158,15 @@
             <br />
 
             <asp:ObjectDataSource ID="odsPromoters" SelectMethod="GetAllPromotersSorted" TypeName="EventManager.Business.Promoter" runat="server" />
+
+            <script type="text/javascript">
+                $(function () {
+                    $('#dtpEventDate').datetimepicker({ format: 'DD/MM/YYYY'});
+                    $('#dtpDoorTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
+                    $('#dtpCurfewTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
+                    });
+            </script>
+
         </LoggedInTemplate>
 
     </asp:LoginView>
