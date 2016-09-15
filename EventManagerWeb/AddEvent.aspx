@@ -162,8 +162,8 @@
             <script type="text/javascript">
                 $(function () {
                     $('#dtpEventDate').datetimepicker({ format: 'DD/MM/YYYY'});
-                    $('#dtpDoorTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
-                    $('#dtpCurfewTime').datetimepicker({ format: 'HH:mm', useCurrent: false });
+                    $('#dtpDoorTime').datetimepicker({ format: 'HH:mm', useCurrent: false, defaultDate: "01/01/1900 19:30:00" });
+                    $('#dtpCurfewTime').datetimepicker({ format: 'HH:mm', useCurrent: false, defaultDate: "01/01/1900 23:00:00" });
                     });
             </script>
 

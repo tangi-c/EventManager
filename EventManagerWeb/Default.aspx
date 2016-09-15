@@ -193,25 +193,25 @@
                                 <tr>
                                     <td><b>Promoter Charge</b></td>
                                     <td>
-                                        <asp:TextBox ID="tbPromoterCharge" CssClass="form-control" runat="server" Text='<%#Bind("PromoterCharge") %>' MaxLength="100" />
+                                        <asp:TextBox ID="tbPromoterCharge" type="number" CssClass="form-control" runat="server" Text='<%#Bind("PromoterCharge") %>' MaxLength="100" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Security Cost</b></td>
                                     <td>
-                                        <asp:TextBox ID="tbSecurityCost" CssClass="form-control" runat="server" Text='<%#Bind("SecurityCost") %>' MaxLength="100" />
+                                        <asp:TextBox ID="tbSecurityCost" type="number" CssClass="form-control" runat="server" Text='<%#Bind("SecurityCost") %>' MaxLength="100" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Sound Cost</b></td>
                                     <td>
-                                        <asp:TextBox ID="tbSoundCost" CssClass="form-control" runat="server" Text='<%#Bind("SoundCost") %>' MaxLength="100" />
+                                        <asp:TextBox ID="tbSoundCost" type="number" CssClass="form-control" runat="server" Text='<%#Bind("SoundCost") %>' MaxLength="100" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><b>Light Cost</b></td>
                                     <td>
-                                        <asp:TextBox ID="tbLightCost" CssClass="form-control" runat="server" Text='<%#Bind("LightCost") %>' MaxLength="100" />
+                                        <asp:TextBox ID="tbLightCost" type="number" CssClass="form-control" runat="server" Text='<%#Bind("LightCost") %>' MaxLength="100" />
                                     </td>
                                 </tr>
                                 <tr>
