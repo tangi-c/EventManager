@@ -5,7 +5,7 @@
     <asp:LoginView runat="server" ViewStateMode="Disabled">
 
         <%-- Main page when not logged in --%>
-        <LoggedInTemplate>
+        <AnonymousTemplate>
             <div class="jumbotron">
                 <h1>Event Manager</h1>
                 <p class="lead">Event Manager is a web application to manage your event calendar.</p>
@@ -35,10 +35,10 @@
                     <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a></p>
                 </div>
             </div>
-        </LoggedInTemplate>
+        </AnonymousTemplate>
 
         <%-- Main page when logged in --%>
-        <AnonymousTemplate>
+        <LoggedInTemplate>
             <div class="jumbotron">
                 <p class="lead">You are logged in as <%: Context.User.Identity.GetUserName()  %>.</p>
             </div>
@@ -268,7 +268,7 @@
 
 
             </div>
-        </AnonymousTemplate>
+        </LoggedInTemplate>
     </asp:LoginView>
 
 </asp:Content>
