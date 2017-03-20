@@ -2,19 +2,19 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
+    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled"> --%>
 
-        <%-- Main page when not logged in --%>
+        <%-- Main page when not logged in --
         <AnonymousTemplate>
             <div class="jumbotron">
                 <h1>Login to add an event</h1>
                 <p class="lead">You need to be logged in to be able to add an event to your calendar. If you do not have an account, you need to register first. </p>
                 <p><a href="Account/Login.aspx" class="btn btn-primary btn-lg">Login &raquo;</a></p>
             </div>
-        </AnonymousTemplate>
+        </AnonymousTemplate> --%>
 
-        <%-- Main page when logged in --%>
-        <LoggedInTemplate>
+        <%-- Main page when logged in --
+        <LoggedInTemplate> --%>
             <div class="jumbotron">
                 <p class="lead">Create a new event here.</p>
             </div>
@@ -167,7 +167,7 @@
                     });
             </script>
 
-        </LoggedInTemplate>
+        <%-- </LoggedInTemplate>
 
-    </asp:LoginView>
+    </asp:LoginView> --%>
 </asp:Content>

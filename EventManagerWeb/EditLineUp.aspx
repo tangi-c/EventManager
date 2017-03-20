@@ -2,7 +2,7 @@
 
 <asp:Content ID="EditLineUpContent" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
+    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled">
         <AnonymousTemplate>
             <div class="jumbotron">
                 <h1>Event Manager</h1>
@@ -10,7 +10,7 @@
                 <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
             </div>
         </AnonymousTemplate>
-        <LoggedInTemplate>
+        <LoggedInTemplate> --%>
             <div class="jumbotron">
                 <p class="lead">You can edit the line up for this event here.</p>
             </div>
@@ -55,7 +55,7 @@
                     <asp:SessionParameter Name="eventId" SessionField="EventId_LineUp" Type="Int32" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-        </LoggedInTemplate>
-    </asp:LoginView>
+        <%-- </LoggedInTemplate>
+    </asp:LoginView> --%>
 
 </asp:Content>

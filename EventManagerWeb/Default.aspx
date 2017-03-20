@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" Debug=true %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
+    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled"> --%>
 
-        <%-- Main page when not logged in --%>
+        <%-- Main page when not logged in -- removed
         <AnonymousTemplate>
             <div class="jumbotron">
                 <h1>Event Manager</h1>
@@ -35,26 +35,26 @@
                     <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a></p>
                 </div>
             </div>
-        </AnonymousTemplate>
+        </AnonymousTemplate> --%>
 
-        <%-- Main page when logged in --%>
-        <LoggedInTemplate>
+        <%-- Main page when logged in --
+        <LoggedInTemplate> --%>
             <div class="jumbotron">
-                <p class="lead">You are logged in as <%: Context.User.Identity.GetUserName()  %>.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p style="font-size:large">Add an event to your calendar.</p>
-                    <br /><br />
-                    <p><a href="AddEvent.aspx" class="btn btn-primary btn-lg">Add an event &raquo;</a></p>
-                    <br />
-                </div>
-                <div class="col-md-6">
-                    <asp:Panel ID="pSearch" DefaultButton="bSearch" runat="server">
-                        <p style="font-size:large">Search through the event list.</p>
-                        <p><asp:TextBox ID="tbSearch" CssClass="form-control" runat="server" MaxLength="100" OnPreRender="tbSearch_PreRender" /></p>
-                        <p><asp:LinkButton ID="bSearch" runat="server" OnClick="bSearch_Click" CssClass="btn btn-primary btn-lg">Search events &raquo;</asp:LinkButton></p>
-                    </asp:Panel>
+                <%-- <p class="lead">You are logged in as <%: Context.User.Identity.GetUserName()  %>.</p> --%>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="font-size:large">Add an event to your calendar.</p>
+                        <br /><br />
+                        <p><a href="AddEvent.aspx" class="btn btn-primary btn-lg">Add an event &raquo;</a></p>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Panel ID="pSearch" DefaultButton="bSearch" runat="server">
+                            <p style="font-size:large">Search through the event list.</p>
+                            <p><asp:TextBox ID="tbSearch" CssClass="form-control" runat="server" MaxLength="100" OnPreRender="tbSearch_PreRender" /></p>
+                            <p><asp:LinkButton ID="bSearch" runat="server" OnClick="bSearch_Click" CssClass="btn btn-primary btn-lg">Search events &raquo;</asp:LinkButton></p>
+                        </asp:Panel>
+                    </div>
                 </div>
             </div>
 
@@ -268,7 +268,7 @@
 
 
             </div>
-        </LoggedInTemplate>
-    </asp:LoginView>
+        <%-- </LoggedInTemplate> --%>
+    <%-- </asp:LoginView> --%>
 
 </asp:Content>

@@ -2,7 +2,7 @@
 
 <asp:Content ID="EditPromoterContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
+    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled">
         <AnonymousTemplate>
             <div class="jumbotron">
                 <h1>Event Manager</h1>
@@ -10,7 +10,7 @@
                 <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
             </div>
         </AnonymousTemplate>
-        <LoggedInTemplate>
+        <LoggedInTemplate> --%>
              <div class="jumbotron">
                 <p class="lead">ATTENTION, if you modify this promoter, all the events with this promoter will be affected.</p>
             </div>
@@ -62,7 +62,7 @@
                     </div>
                 </ItemTemplate>
             <asp:ObjectDataSource ID="odsPromoterList" SelectMethod="GetAllPromotersSorted" TypeName="EventManager.Business.Promoter" runat="server" />
-        </LoggedInTemplate>
-    </asp:LoginView>
+        <%-- </LoggedInTemplate>
+    </asp:LoginView> --%>
 
 </asp:Content>
