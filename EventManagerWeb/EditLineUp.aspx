@@ -2,60 +2,53 @@
 
 <asp:Content ID="EditLineUpContent" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled">
-        <AnonymousTemplate>
-            <div class="jumbotron">
-                <h1>Event Manager</h1>
-                <p class="lead">Event Manager is a web application to manage your event calendar.</p>
-                <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="jumbotron">
+        <p class="lead">You can edit the line up for this event here.</p>
+    </div>
+
+    <%-- Line up details --%>
+    <asp:FormView ID="fvLineUp" DataSourceID="odsLineUp" runat="server">
+        <ItemTemplate>
+            <div class="row">
+                <div class="col-md-12">
+                    <table>
+                        <tr>
+                            <td><b>Headline</b></td>
+                            <td>
+                                <asp:TextBox ID="tbHeadline" CssClass="form-control" runat="server" Text='<%#Bind("Headline") %>' MaxLength="100" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Support</b></td>
+                            <td>
+                                <asp:TextBox ID="tbSupport" CssClass="form-control" runat="server" Text='<%#Bind("Support") %>' MaxLength="100" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Opener</b></td>
+                            <td>
+                                <asp:TextBox ID="tbOpener" CssClass="form-control" runat="server" Text='<%#Bind("Opener") %>' MaxLength="100" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><asp:TextBox ID="tbLineUpId" runat="server" Text='<%#Bind("LineUpId") %>' Enabled="false" Visible="false" /></td>
+                        </tr>
+                        <tr>
+                            <td><asp:LinkButton ID="bUpdate" runat="server" Text="Update" OnClick="bUpdate_Click" CssClass="btn btn-default" /></td>
+                            <td><asp:LinkButton ID="bCancel" runat="server" Text="Cancel" OnClick="bCancel_Click" CssClass="btn btn-default" /></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </AnonymousTemplate>
-        <LoggedInTemplate> --%>
-            <div class="jumbotron">
-                <p class="lead">You can edit the line up for this event here.</p>
-            </div>
-            <asp:FormView ID="fvLineUp" DataSourceID="odsLineUp" runat="server">
-                <ItemTemplate>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <table>
-                                <tr>
-                                    <td><b>Headline</b></td>
-                                    <td>
-                                        <asp:TextBox ID="tbHeadline" CssClass="form-control" runat="server" Text='<%#Bind("Headline") %>' MaxLength="100" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Support</b></td>
-                                    <td>
-                                        <asp:TextBox ID="tbSupport" CssClass="form-control" runat="server" Text='<%#Bind("Support") %>' MaxLength="100" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Opener</b></td>
-                                    <td>
-                                        <asp:TextBox ID="tbOpener" CssClass="form-control" runat="server" Text='<%#Bind("Opener") %>' MaxLength="100" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><asp:TextBox ID="tbLineUpId" runat="server" Text='<%#Bind("LineUpId") %>' Enabled="false" Visible="false" /></td>
-                                </tr>
-                               <tr>
-                                   <td><asp:LinkButton ID="bUpdate" runat="server" Text="Update" OnClick="bUpdate_Click" CssClass="btn btn-default" /></td>
-                                   <td><asp:LinkButton ID="bCancel" runat="server" Text="Cancel" OnClick="bCancel_Click" CssClass="btn btn-default" /></td>
-                               </tr>
-                            </table>
-                        </div>
-                    </div>
-                </ItemTemplate>
-            </asp:FormView>
-            <asp:ObjectDataSource ID="odsLineUp" runat="server" SelectMethod="GetLineUpByEventId" TypeName="EventManager.Business.LineUp">
-                <SelectParameters>
-                    <asp:SessionParameter Name="eventId" SessionField="EventId_LineUp" Type="Int32" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-        <%-- </LoggedInTemplate>
-    </asp:LoginView> --%>
+        </ItemTemplate>
+    </asp:FormView>
+
+    <%-- Lineup datasource --%>
+    <asp:ObjectDataSource ID="odsLineUp" runat="server" SelectMethod="GetLineUpByEventId" TypeName="EventManager.Business.LineUp">
+        <SelectParameters>
+            <asp:SessionParameter Name="eventId" SessionField="EventId_LineUp" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 </asp:Content>

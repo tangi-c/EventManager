@@ -131,8 +131,8 @@ public partial class EditPromoter : System.Web.UI.Page
         {
             int selectedId = Convert.ToInt32(d.SelectedItem.Value);
 
-            // This function is called on every postback (why?),
-            // so to know if it called when the selection was actually changed,
+            // This function is called on every postback,
+            // so to know if it was called when the selection was actually changed,
             // check if the value from the dropdownlist is different from the session value.
             if (selectedId != Convert.ToInt32(Session["ddl"].ToString()))
             {
@@ -211,12 +211,17 @@ public partial class EditPromoter : System.Web.UI.Page
                 // if the controls are found
                 if ((tbContactName != null) && (tbCompanyName != null) && (tbPhone != null) && (tbEmail != null))
                 {
-                    Promoter currentPromoter = Promoter.GetPromoterByEventId(Convert.ToInt32(Session["EventId_Promoter"].ToString()));
-                    // populate the text boxes
-                    tbContactName.Text = currentPromoter.ContactName;
-                    tbCompanyName.Text = currentPromoter.CompanyName;
-                    tbPhone.Text = currentPromoter.Phone;
-                    tbEmail.Text = currentPromoter.Email;
+                    if (Session["EventId_Promoter"] == null)
+                        Response.Redirect("Default.aspx");
+                    else
+                    {
+                        Promoter currentPromoter = Promoter.GetPromoterByEventId(Convert.ToInt32(Session["EventId_Promoter"].ToString()));
+                        // populate the text boxes
+                        tbContactName.Text = currentPromoter.ContactName;
+                        tbCompanyName.Text = currentPromoter.CompanyName;
+                        tbPhone.Text = currentPromoter.Phone;
+                        tbEmail.Text = currentPromoter.Email;
+                    }
                 }
             }
         }
