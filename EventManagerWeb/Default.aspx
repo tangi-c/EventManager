@@ -161,7 +161,7 @@
                                     <td><b>Event date</b></td>
                                     <td>
                                         <div class="input-group date" id="dtpEventDate">
-                                        <asp:TextBox ID="dtpBoxEventTime" CssClass="form-control" runat="server" Text='<%#Bind("EventDate")%>' ClientIDMode="Static" />
+                                        <asp:TextBox ID="dtpBoxEventDate" CssClass="form-control" runat="server" Text='<%#Bind("EventDate", "{0:dd/MM/yyyy}")%>' ClientIDMode="Static" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>

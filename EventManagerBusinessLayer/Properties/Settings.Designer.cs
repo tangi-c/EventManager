@@ -26,21 +26,11 @@ namespace EventManager.Business.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\main;Initial Catalog=EventManagement;Persist Security Info=True;Use" +
-            "r ID=sa;Password=Bobby911")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_A16368_eventmanager;User Id" +
+            "=DB_A16368_eventmanager_admin;Password=rgae8ER314vzG;")]
         public string EventManagementConnectionString {
             get {
                 return ((string)(this["EventManagementConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\MAIN;Initial Catalog=EventManagement;Integrated Security=True")]
-        public string EventManagementConnectionString1 {
-            get {
-                return ((string)(this["EventManagementConnectionString1"]));
             }
         }
     }

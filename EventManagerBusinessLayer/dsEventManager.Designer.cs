@@ -34,13 +34,13 @@ namespace EventManager.Business {
         
         private EventsDataTable tableEvents;
         
-        private global::System.Data.DataRelation relationFK_Promoters_Event_Promoter;
-        
         private global::System.Data.DataRelation relationFK_Events_Event_Promoter;
         
-        private global::System.Data.DataRelation relationFK_LineUp_Event_LineUp;
+        private global::System.Data.DataRelation relationFK_Promoters_Event_Promoter;
         
         private global::System.Data.DataRelation relationFK_Events_Event_LineUp;
+        
+        private global::System.Data.DataRelation relationFK_LineUp_Event_LineUp;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -298,10 +298,10 @@ namespace EventManager.Business {
                     this.tableEvents.InitVars();
                 }
             }
-            this.relationFK_Promoters_Event_Promoter = this.Relations["FK_Promoters_Event_Promoter"];
             this.relationFK_Events_Event_Promoter = this.Relations["FK_Events_Event_Promoter"];
-            this.relationFK_LineUp_Event_LineUp = this.Relations["FK_LineUp_Event_LineUp"];
+            this.relationFK_Promoters_Event_Promoter = this.Relations["FK_Promoters_Event_Promoter"];
             this.relationFK_Events_Event_LineUp = this.Relations["FK_Events_Event_LineUp"];
+            this.relationFK_LineUp_Event_LineUp = this.Relations["FK_LineUp_Event_LineUp"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -323,13 +323,6 @@ namespace EventManager.Business {
             this.tableEvents = new EventsDataTable();
             base.Tables.Add(this.tableEvents);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Promoters_Event_Promoter", new global::System.Data.DataColumn[] {
-                        this.tablePromoters.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEvent_Promoter.PromoterIdColumn});
-            this.tableEvent_Promoter.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Events_Event_Promoter", new global::System.Data.DataColumn[] {
                         this.tableEvents.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEvent_Promoter.EventIdColumn});
@@ -337,10 +330,10 @@ namespace EventManager.Business {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_LineUp_Event_LineUp", new global::System.Data.DataColumn[] {
-                        this.tableLineUp.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEvent_LineUp.LineUpIdColumn});
-            this.tableEvent_LineUp.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Promoters_Event_Promoter", new global::System.Data.DataColumn[] {
+                        this.tablePromoters.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEvent_Promoter.PromoterIdColumn});
+            this.tableEvent_Promoter.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -351,22 +344,29 @@ namespace EventManager.Business {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Promoters_Event_Promoter = new global::System.Data.DataRelation("FK_Promoters_Event_Promoter", new global::System.Data.DataColumn[] {
-                        this.tablePromoters.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEvent_Promoter.PromoterIdColumn}, false);
-            this.Relations.Add(this.relationFK_Promoters_Event_Promoter);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_LineUp_Event_LineUp", new global::System.Data.DataColumn[] {
+                        this.tableLineUp.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEvent_LineUp.LineUpIdColumn});
+            this.tableEvent_LineUp.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_Events_Event_Promoter = new global::System.Data.DataRelation("FK_Events_Event_Promoter", new global::System.Data.DataColumn[] {
                         this.tableEvents.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEvent_Promoter.EventIdColumn}, false);
             this.Relations.Add(this.relationFK_Events_Event_Promoter);
-            this.relationFK_LineUp_Event_LineUp = new global::System.Data.DataRelation("FK_LineUp_Event_LineUp", new global::System.Data.DataColumn[] {
-                        this.tableLineUp.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEvent_LineUp.LineUpIdColumn}, false);
-            this.Relations.Add(this.relationFK_LineUp_Event_LineUp);
+            this.relationFK_Promoters_Event_Promoter = new global::System.Data.DataRelation("FK_Promoters_Event_Promoter", new global::System.Data.DataColumn[] {
+                        this.tablePromoters.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEvent_Promoter.PromoterIdColumn}, false);
+            this.Relations.Add(this.relationFK_Promoters_Event_Promoter);
             this.relationFK_Events_Event_LineUp = new global::System.Data.DataRelation("FK_Events_Event_LineUp", new global::System.Data.DataColumn[] {
                         this.tableEvents.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEvent_LineUp.EventIdColumn}, false);
             this.Relations.Add(this.relationFK_Events_Event_LineUp);
+            this.relationFK_LineUp_Event_LineUp = new global::System.Data.DataRelation("FK_LineUp_Event_LineUp", new global::System.Data.DataColumn[] {
+                        this.tableLineUp.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEvent_LineUp.LineUpIdColumn}, false);
+            this.Relations.Add(this.relationFK_LineUp_Event_LineUp);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2252,23 +2252,23 @@ namespace EventManager.Business {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PromotersRow PromotersRow {
-                get {
-                    return ((PromotersRow)(this.GetParentRow(this.Table.ParentRelations["FK_Promoters_Event_Promoter"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Promoters_Event_Promoter"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EventsRow EventsRow {
                 get {
                     return ((EventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Events_Event_Promoter"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Events_Event_Promoter"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PromotersRow PromotersRow {
+                get {
+                    return ((PromotersRow)(this.GetParentRow(this.Table.ParentRelations["FK_Promoters_Event_Promoter"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Promoters_Event_Promoter"]);
                 }
             }
         }
@@ -2322,23 +2322,23 @@ namespace EventManager.Business {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LineUpRow LineUpRow {
-                get {
-                    return ((LineUpRow)(this.GetParentRow(this.Table.ParentRelations["FK_LineUp_Event_LineUp"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_LineUp_Event_LineUp"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EventsRow EventsRow {
                 get {
                     return ((EventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Events_Event_LineUp"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Events_Event_LineUp"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public LineUpRow LineUpRow {
+                get {
+                    return ((LineUpRow)(this.GetParentRow(this.Table.ParentRelations["FK_LineUp_Event_LineUp"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_LineUp_Event_LineUp"]);
                 }
             }
         }
@@ -4807,7 +4807,7 @@ SELECT Id, EventDate, DoorTime, CurfewTime, PromoterCharge, SecurityCost, SoundC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EventManager.Business.Properties.Settings.Default.EventManagementConnectionString1;
+            this._connection.ConnectionString = global::EventManager.Business.Properties.Settings.Default.EventManagementConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4865,7 +4865,7 @@ SET                EventDate = @EventDate, DoorTime = @DoorTime, CurfewTime = @C
 WHERE        (Id = @Id); 
 SELECT SCOPE_IDENTITY()";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EventDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "EventDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EventDate", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "EventDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DoorTime", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "DoorTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CurfewTime", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "CurfewTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PromoterCharge", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PromoterCharge", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5195,14 +5195,9 @@ SELECT SCOPE_IDENTITY()";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual object UpdateEvent(string EventDate, string DoorTime, string CurfewTime, double PromoterCharge, double SecurityCost, double SoundCost, double LightCost, int Id) {
+        public virtual int UpdateEvent(System.DateTime EventDate, string DoorTime, string CurfewTime, double PromoterCharge, double SecurityCost, double SoundCost, double LightCost, int Id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
-            if ((EventDate == null)) {
-                throw new global::System.ArgumentNullException("EventDate");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(EventDate));
-            }
+            command.Parameters[0].Value = ((System.DateTime)(EventDate));
             if ((DoorTime == null)) {
                 throw new global::System.ArgumentNullException("DoorTime");
             }
@@ -5225,22 +5220,16 @@ SELECT SCOPE_IDENTITY()";
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            object returnValue;
+            int returnValue;
             try {
-                returnValue = command.ExecuteScalar();
+                returnValue = command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
+            return returnValue;
         }
     }
     

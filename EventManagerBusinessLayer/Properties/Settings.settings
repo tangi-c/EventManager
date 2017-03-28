@@ -5,18 +5,10 @@
     <Setting Name="EventManagementConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.\main;Initial Catalog=EventManagement;Persist Security Info=True;User ID=sa;Password=Bobby911&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_A16368_eventmanager;User Id=DB_A16368_eventmanager_admin;Password=rgae8ER314vzG;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.\main;Initial Catalog=EventManagement;Persist Security Info=True;User ID=sa;Password=Bobby911</Value>
-    </Setting>
-    <Setting Name="EventManagementConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.\MAIN;Initial Catalog=EventManagement;Integrated Security=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.\MAIN;Initial Catalog=EventManagement;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=SQL5033.SmarterASP.NET;Initial Catalog=DB_A16368_eventmanager;User Id=DB_A16368_eventmanager_admin;Password=rgae8ER314vzG;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EventManager.Business;
+using System.Globalization;
 
 public partial class AddEvent : System.Web.UI.Page
 {
@@ -41,7 +42,7 @@ public partial class AddEvent : System.Web.UI.Page
             TextBox tbSupport = (TextBox)b.Parent.FindControl("tbSupport");
             TextBox tbOpener = (TextBox)b.Parent.FindControl("tbOpener");
 
-            // if all controls have been found, create line up and add to database.
+            // if all controls have been found, create line up.
             if ((tbHeadline != null) && (tbSupport != null) && (tbOpener != null))
                 newLineUp = new LineUp(tbHeadline.Text, tbSupport.Text, tbOpener.Text);
             // otherwise alert + create empty line up.
@@ -111,7 +112,7 @@ public partial class AddEvent : System.Web.UI.Page
             {
                 // an event needs a date.
                 DateTime eventDate;
-                if (DateTime.TryParse(dtpBoxEventDate.Text, out eventDate))
+                if (DateTime.TryParse(dtpBoxEventDate.Text, CultureInfo.CreateSpecificCulture("fr-FR"), DateTimeStyles.None, out eventDate))
                 {
                     // try to parse all the other values and if it doesnt work, use default values.
                     TimeSpan doorTime, curfewTime;

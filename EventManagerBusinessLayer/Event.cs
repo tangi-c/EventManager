@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventManager.Business.dsEventManagerTableAdapters;
+using System.Globalization;
 
 namespace EventManager.Business
 {
@@ -355,9 +356,15 @@ namespace EventManager.Business
 
             if ((eventDate != null || doorTime != null || curfewTime != null) && eventId > 0)
             {
-                newId = Convert.ToInt32(taEvents.UpdateEvent(eventDate, doorTime, curfewTime, promoterCharge, securityCost, soundCost, lightCost, eventId));
-                if (eventId == newId)
-                    return true;
+                DateTime eventDateConverted;
+                if (DateTime.TryParse(eventDate, CultureInfo.CreateSpecificCulture("fr-FR"), DateTimeStyles.None, out eventDateConverted))
+                {
+                    newId = Convert.ToInt32(taEvents.UpdateEvent(eventDateConverted, doorTime, curfewTime, promoterCharge, securityCost, soundCost, lightCost, eventId));
+                    if (eventId == newId)
+                        return true;
+                    else
+                        return false;
+                }
                 else
                     return false;
             }
