@@ -3,16 +3,15 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%-- Add event and search box --%>
-    <div class="jumbotron">
-        <div class="row">
+    <div class="jumbotron" style="background-image:url(../P1010769.jpg)">
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <p style="font-size:large">Add an event to your calendar.</p>
-                <br /><br />
+                <p style="color:white; font-size:large">Add an event to your calendar.</p>
                 <p><a href="AddEvent.aspx" class="btn btn-primary btn-lg">New event &raquo;</a></p>
             </div>
             <div class="col-md-6">
                 <asp:Panel ID="pSearch" DefaultButton="bSearch" runat="server">
-                    <p style="font-size:large">Search through the event list.</p>
+                    <p style="color:white; font-size:large">Search through the event list.</p>
                     <p><asp:TextBox ID="tbSearch" CssClass="form-control" runat="server" MaxLength="100" OnPreRender="tbSearch_PreRender" /></p>
                     <p><asp:LinkButton ID="bSearch" runat="server" OnClick="bSearch_Click" CssClass="btn btn-primary btn-lg">Search events &raquo;</asp:LinkButton></p>
                 </asp:Panel>
