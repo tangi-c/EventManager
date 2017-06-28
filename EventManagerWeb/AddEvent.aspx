@@ -2,8 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <p class="lead">Create a new event here.</p>
+    <div class="jumbotron"style="background-image:url(../pictures/P1020033.jpg)">
+        <p class="lead" style="color:white">Create a new event here.</p>
     </div>
 
     <div class="row">
@@ -66,9 +66,16 @@
                     <td><b>Light Cost</b></td>
                     <td>
                         <asp:TextBox ID="tbLightCost" type="number" CssClass="form-control" runat="server" MaxLength="100" />
+
                     </td>
                 </tr>
             </table>
+            <asp:RequiredFieldValidator ID="rfDate" ControlToValidate="dtpBoxEventDate" Display="Dynamic" ErrorMessage="A date is required." ForeColor="DarkRed" runat="server"/>
+            <asp:RegularExpressionValidator ID="revPromoter" ControlToValidate="tbPromoterCharge" Display="Dynamic" ErrorMessage="The Promoter charge needs to be a number!!!" ForeColor="DarkRed" ValidationExpression="^(\b[0-9]*\.*[0-9]+\b)$" runat="server"/>
+            <asp:CustomValidator ID="cvPromoter" ControlToValidate="tbPromoterCharge" Display="Dynamic" ErrorMessage="The promoter charge needs to be a number." ForeColor="DarkRed" OnServerValidate="CheckIsNumberOrEmpty" runat="server"/>
+            <asp:CustomValidator ID="cvSecurity" ControlToValidate="tbSecurityCost" Display="Dynamic" ErrorMessage="The security cost needs to be a number." ForeColor="DarkRed" OnServerValidate="CheckIsNumberOrEmpty" runat="server"/>
+            <asp:CustomValidator ID="cvSound" ControlToValidate="tbSoundCost" Display="Dynamic" ErrorMessage="The sound cost needs to be a number." ForeColor="DarkRed" OnServerValidate="CheckIsNumberOrEmpty" runat="server"/>
+            <asp:CustomValidator ID="cvLight"  ControlToValidate="tbLightCost" Display="Dynamic" ErrorMessage="The light cost needs to be a number." ForeColor="DarkRed" OnServerValidate="CheckIsNumberOrEmpty" runat="server"/>
         </div>
 
         <%-- LINE UP details --%>
@@ -129,7 +136,8 @@
                 <tr>
                     <td><b>Promoter Email</b></td>
                     <td>
-                        <asp:TextBox ID="tbEmail" type="email" CssClass="form-control" runat="server" MaxLength="100" />
+                        <asp:TextBox ControlToValidate="textEmail" ID="tbEmail" type="email" CssClass="form-control" runat="server" MaxLength="100" />
+                        <asp:CustomValidator id="cvEmail" ControlToValidate="tbEmail" Display="Static" ErrorMessage="Not a valid email address!" ForeColor="DarkRed" OnServerValidate="cvEmail_ServerValidate" runat="server"/>
                     </td>
                 </tr>
             </table>

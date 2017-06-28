@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%-- Add event and search box --%>
-    <div class="jumbotron" style="background-image:url(../P1010769.jpg)">
+    <div class="jumbotron" style="background-image:url(../pictures/P1010769.jpg)">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <p style="color:white; font-size:large">Add an event to your calendar.</p>
