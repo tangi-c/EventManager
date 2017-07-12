@@ -7,7 +7,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <p style="color:white; font-size:large">Add an event to your calendar.</p>
-                <p style="opacity:0">I</p>
+                <p style="margin: 65px"></p>
                 <p><a href="AddEvent.aspx" class="btn btn-primary btn-lg">New event &raquo;</a></p>
             </div>
             <div class="col-md-6">
