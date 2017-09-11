@@ -27,3 +27,12 @@ textarea {
         padding: 0;
     }
 }
+
+.about-title {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.about-p {
+    margin-bottom: 10%;
+}
